@@ -1,11 +1,16 @@
-class MyThread extends Thread {
-    // TODO: Override the run() method
-    // Inside run(), print "Thread is running"
+class MyRunnable implements Runnable {
+    @Override 
+    public void run(){
+        for(int i=1;i<=5;i++){
+            System.out.print(i+ " ");
+        }
+    }
 }
 
-public class ExtendThread {
+public class RunnableThread {
     public static void main(String[] args) {
-        // TODO: Create an object of MyThread
-        // TODO: Start the thread using start() method
+        MyRunnable r=new MyRunnable();
+        Thread t=new Thread(r);
+        t.start();
     }
 }
